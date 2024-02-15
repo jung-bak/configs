@@ -148,4 +148,17 @@ function klone () {
 include "$HOME/.config/sensitive/secrets.sh"
 include "$HOME/.asdf/asdf.sh"
 
+
+function spotify_download() {
+    # Check if an argument is provided
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: spotdl <argument>"
+        return 1
+    fi
+
+    # Run Python script with the provided argument
+    python ~/Documents/Repositories/music_downloader/main.py "$1"
+}
+
+alias spotdl="spotify_download"
 # }}}
